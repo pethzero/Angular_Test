@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myproject';
+  value = 0;
+
+  calBuffet(value:string){
+    const price = Number(value);
+    this.value = (price*3)/4;
+  }
+  // title = 'myproject';
+  // ninjaname = 'pethzero';
+  
+  // ninjaconsole(){
+  //   console.log('ninjaconsole',this.ninjaname);
+  // }
+
+  // changeName(name:string){
+  //   this.ninjaname = name;
+  // }
 }
