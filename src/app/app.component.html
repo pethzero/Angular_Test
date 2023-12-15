@@ -1,5 +1,30 @@
-<app-action-bar [step]="5"></app-action-bar>
-<app-action-bar [step]="10"></app-action-bar>
+<style>
+    /* styles.css */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+  </style>
+<!-- <app-action-bar (numberChange)="testNumberChange()" [step]="5"></app-action-bar> -->
+<!-- <app-action-bar (numberChange)="testNumberChange()" [step]="10"></app-action-bar> -->
+<!-- <button type="button" (click)="testClick()">Change TEST</button> -->
 <!-- <span>มา 4 คน จ่าย 3</span>
 <div>
     <input #priceBuffetInput type="text" value="20000" placeholder="ราคา">
@@ -16,3 +41,21 @@ my name is {{ninjaname}}
 <button type="button" (click)="changeName('sasuke')">Change Name to sasuke</button>
 <button type="button" (click)="changeName('naruto')">Change Name to naruto</button>
 </div> -->
+
+<!-- !!!!!!!!! API !!!!!!!!! -->
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- เพิ่มคอลัมน์อื่น ๆ ตามต้องการ -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <!-- เพิ่มคอลัมน์อื่น ๆ ตามต้องการ -->
+      </tr>
+    </tbody>
+  </table>

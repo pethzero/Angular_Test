@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-action-bar',
@@ -7,22 +7,27 @@ import { Component, Input } from '@angular/core';
 })
 export class ActionBarComponent {
   counter:number = 0;
-  @Input() step:number = 1;
+  @Input() step= 1;
+  @Output() numberChange = new EventEmitter();
   constructor (){}
   decrease(){
-    console.log('Hey sdecrease')
+    console.log('Hey decrease')
     if(this.counter-1>= 0)
     {
       // this.counter = this.counter - 1 ;
-      this.counter--;
+      // this.counter--;
+      this.counter  =  this.counter -  this.step;
+      this.numberChange.emit();
     }
   }
   increase(){
+    console.log('Hey increase')
     if(this.counter+1<100)
     {
       // this.counter = this.counter + 1 ;
       // this.counter++;
       this.counter  =  this.counter +  this.step;
+      this.numberChange.emit();
     }
   }
 }
